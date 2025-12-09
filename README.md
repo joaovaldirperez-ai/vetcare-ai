@@ -24,23 +24,18 @@ El sistema consta de cuatro componentes principales. El router agent clasifica l
 
 La comunicación entre componentes se realiza a través de funciones simples que pasan el contexto conversacional y reciben respuestas del agente correspondiente. Cada agente mantiene su propio historial de mensajes durante la sesión del usuario, lo que permite conversaciones coherentes y contextualizadas.
 
-## Instalación y Configuración
+## Para Probar el Chat
 
-Cree un archivo `.env` en la raíz del proyecto con su clave de OpenAI:
+Configure su clave de OpenAI en un archivo `.env`:
 
 ```
 OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Instale las dependencias:
+Instale dependencias y ejecute:
 
 ```bash
 pip install -r requirements.txt
-```
-
-Ejecute la aplicación:
-
-```bash
 streamlit run app.py
 ```
 
