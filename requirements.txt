@@ -1,0 +1,22 @@
+# LLM and Orchestration
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+langgraph>=0.2.0
+
+# Vector Search and Embeddings
+faiss-cpu>=1.8.0
+tiktoken>=0.7.0
+
+# Document Processing
+pypdf>=5.0.0
+unstructured>=0.15.0
+
+# Environment Management
+python-dotenv>=1.0.1
+
+# Web Interface
+streamlit>=1.32.0
+
+# Utilities
+requests>=2.31.0
