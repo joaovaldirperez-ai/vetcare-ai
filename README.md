@@ -24,89 +24,25 @@ El sistema consta de cuatro componentes principales. El router agent clasifica l
 
 La comunicación entre componentes se realiza a través de funciones simples que pasan el contexto conversacional y reciben respuestas del agente correspondiente. Cada agente mantiene su propio historial de mensajes durante la sesión del usuario, lo que permite conversaciones coherentes y contextualizadas.
 
-## Instalación y Ejecución
+## Instalación y Configuración
 
-### Requisitos Previos
-
-El proyecto requiere Python 3.9 o superior instalado en su sistema. Se recomienda ampliamente usar un entorno virtual para aislar las dependencias del proyecto y evitar conflictos con otros proyectos Python. Además, necesitará una cuenta activa con acceso a la API de OpenAI y una clave de API válida.
-
-### Pasos de Instalación
-
-**Paso 1: Clonar el repositorio**
-
-Abra una terminal en el directorio donde desee guardar el proyecto y ejecute:
-
-```bash
-git clone https://github.com/joaovaldirperez-ai/vetcare-ai.git
-cd vetcare-ai
-```
-
-**Paso 2: Crear y activar un entorno virtual**
-
-En Windows (PowerShell o CMD):
-```powershell
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-```
-
-En macOS o Linux:
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-**Paso 3: Instalar dependencias**
-
-Una vez el entorno virtual esté activado, instale todas las dependencias necesarias:
-
-```bash
-pip install -r requirements.txt
-```
-
-**Paso 4: Configurar las variables de entorno**
-
-Cree un archivo llamado `.env` en la raíz del proyecto (al mismo nivel que app.py). El archivo debe contener su clave de API de OpenAI:
+Cree un archivo `.env` en la raíz del proyecto con su clave de OpenAI:
 
 ```
 OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Reemplace `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` con su clave real de OpenAI. Puede obtener su clave en https://platform.openai.com/account/api-keys.
+Instale las dependencias:
 
-**Importante**: El archivo `.env` nunca debe ser compartido o subido a un repositorio público. Está incluido en el `.gitignore` del proyecto para proteger sus credenciales.
+```bash
+pip install -r requirements.txt
+```
 
-### Ejecución de la Aplicación
-
-Con el entorno virtual activado y las dependencias instaladas, ejecute:
+Ejecute la aplicación:
 
 ```bash
 streamlit run app.py
 ```
-
-La aplicación abrirá automáticamente en su navegador en la dirección http://localhost:8501. Si no abre automáticamente, navegue manualmente a esa dirección.
-
-### Uso del Sistema
-
-Una vez que la aplicación esté ejecutándose, verá una interfaz de chat donde puede:
-
-1. **Hacer preguntas sobre cuidado de mascotas**: Escriba cualquier pregunta sobre salud, nutrición, comportamiento o cuidados de mascotas. El sistema buscará información en su base de conocimientos y proporcionará respuestas detalladas.
-
-2. **Agendar una cita**: Indique que desea agendar una cita veterinaria. El sistema iniciará un flujo conversacional que recopilará información sobre usted, su mascota, el motivo de la consulta y la disponibilidad de horarios.
-
-3. **Solicitar atención humana**: En cualquier momento, puede indicar que desea hablar con un agente humano. El sistema reconocerá esta solicitud y creará un ticket de soporte con su información.
-
-### Solución de Problemas
-
-Si encuentra el error "ModuleNotFoundError" cuando ejecuta `streamlit run app.py`, verifique que:
-- El entorno virtual está correctamente activado
-- Todas las dependencias de requirements.txt fueron instaladas correctamente
-
-Si recibe errores relacionados con OpenAI, verifique que:
-- El archivo `.env` existe en la raíz del proyecto
-- La variable `OPENAI_API_KEY` contiene una clave válida
-- Su cuenta de OpenAI tiene acceso disponible y saldo suficiente
-
-Si la aplicación no responde, asegúrese de tener una conexión a internet estable para comunicarse con la API de OpenAI.
 
 
 ## Uso del Sistema
